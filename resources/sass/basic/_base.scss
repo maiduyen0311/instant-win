@@ -1,0 +1,73 @@
+:root {
+    --html-font-size: 10px;
+    --body-size: 1.4rem;
+    --body-line-height:calc(var(--body-size) * 1.56);
+    --body-letter-spacing: 0.04rem;
+    --body-family: "Source Han Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", Meiryo, sans-serif;
+    --body-weight: 400;
+    --body-color:#3B4043;
+    --body-bg:#fff;
+    --menu-family:var(--body-family);
+    --button-family:var(--body-family);
+
+    --heading-color: #333;
+    --heading-family:var(--body-family);
+
+    --h1-size: 3.2rem;
+    --h1-line-height:calc(var(--h1-size) * 1.375);
+
+    --h2-size:2.8rem;
+    --h2-line-height:calc(var(--h2-size) * 1.57);
+
+    --h3-size:2.4rem;
+    --h3-line-height:calc(var(--h3-size) * 1.5);
+
+    --h4-size:2rem;
+    --h4-line-height:calc(var(--h4-size) * 1.4);
+}
+
+html{
+    font-size: var(--html-font-size);
+    min-height: 100vh;
+}
+
+// Body
+//
+// 1. Remove the margin in all browsers.
+// 2. As a best practice, apply a default `background-color`.
+// 3. Prevent adjustments of font size after orientation changes in iOS.
+// 4. Change the default tap highlight to be completely transparent in iOS.
+
+// scss-docs-start reboot-body-rules
+body {
+  margin: 0; // 1
+  font-family: var(--body-family);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  line-height: var(--body-line-height);
+  color: var(--body-color);
+  letter-spacing: var(--body-letter-spacing);
+  background-color: var(--body-bg); // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba(255,255,255,0); // 4
+  min-height: 100vh;
+}
+// scss-docs-end reboot-body-rules
+
+
+// Content grouping
+//
+// 1. Reset Firefox's gray color
+
+hr {
+  margin: $hr-margin-y 0;
+  color: $hr-color; // 1
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+  opacity: $hr-opacity;
+}
+ul,
+ol,
+li{
+  list-style: none;
+}

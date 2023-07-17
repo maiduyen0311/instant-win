@@ -1,0 +1,33 @@
+@import "../variable";
+.admin-page{
+  .nav{
+    &-tabs{
+      border: none;
+      padding: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+    &-item{
+      & > .nav-link{
+        padding: 1rem 2rem;
+        background-color: #f1f1f1;
+        border-radius: 25px;
+        line-height: 1.2;
+        min-width: 10rem;
+        text-align: center;
+        color:#777;
+        font-weight: 500;
+        transition: $transition;
+        cursor: pointer;
+        &.active{
+          border: none;
+          background: #022b54;
+          background: -moz-linear-gradient(45deg, #022b54 0%, #02488f 100%);
+          background: -webkit-linear-gradient(45deg, #022b54 0%,#02488f 100%);
+          background: linear-gradient(45deg, #022b54 0%,#02488f 100%);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
