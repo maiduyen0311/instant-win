@@ -11,6 +11,9 @@ export default {
   methods: {
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    logout() {
+      this.$store.dispatch("auth/logout");
     }
   }
 }
@@ -22,7 +25,7 @@ export default {
       <div class="row d-flex justify-content-between align-items-center">
         <div class="col-4 header-logo">
           <h1 class="logo">
-              <router-link to="/"><img :src="logoSrc" alt="Logo" class="h-10"></router-link>
+              <router-link to="/login"><img :src="logoSrc" alt="Logo" class="h-10"></router-link>
           </h1>
         </div>
         <div class="col-8">
@@ -35,7 +38,7 @@ export default {
                 <li class="name"><span>Your Name</span></li>
                 <li class="item"><router-link to="/login"><font-awesome-icon :icon="['far', 'user']" /> アカウント</router-link></li>
                 <li class="item"><router-link to="/help-center"><font-awesome-icon :icon="['fas', 'circle-question']" /> ヘルプセンター</router-link></li>
-                <li class="logout item"><router-link to="/logout"><font-awesome-icon :icon="['fas', 'arrow-right-from-bracket']" /> ログアウト</router-link></li>
+                <li class="logout item"><router-link @click="logout()" to="/login"><font-awesome-icon :icon="['fas', 'arrow-right-from-bracket']" /> ログアウト</router-link></li>
               </ul>
             </li>
           </ul>

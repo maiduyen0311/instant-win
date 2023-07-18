@@ -13,34 +13,59 @@
             <span class="icon focus__form-control"><font-awesome-icon :icon="['fas', 'lock']" /></span>
           </div>
           <div class="btn-action mt-5 pt-5">
-            <input type="submit" class="btn btn-primary" @click="doLogin" value="ログイン">
+            <input type="submit" class="btn btn-primary" value="ログイン">
             <p class="mb-0 mt-4 text-center"><router-link to="/">パスワードを忘れた方はこちら</router-link></p>
             <p class="mb-0 mt-4 text-center"><router-link to="/">新規アカウント登録はこちら</router-link></p>
           </div>
-            <div><router-link to="/help-center">利用規約　ヘルプ</router-link></div>
+          <div><router-link to="/help-center">利用規約　ヘルプ</router-link></div>
         </form>
       </div>
     </div>
   </section>
 </template>
+
 <script>
-  export default {
-    name: 'login',
-    data() {
-      return {
-        emailLogin: "",
-        passwordLogin: "",
-        emptyFields: false
-      };
+export default {
+  name: 'login',
+  data() {
+    return {
+      emailLogin: "",
+      passwordLogin: "",
+      emptyFields: false
+    };
+  },
+  computed: {
+    loggedIn() {
+      return this.$store.state.auth.status.loggedIn;
     },
-    methods: {
-      doLogin() {
-        if (this.emailLogin === "" || this.passwordLogin === "") {
-          this.emptyFields = true;
-        }
+  },
+  created() {
+    if (this.loggedIn) {
+      this.$router.push("/dashboard");
+    }
+  },
+  methods: {
+    login() {
+      if (this.emailLogin === "" || this.passwordLogin === "") {
+        this.emptyFields = true;
+      } else {
+        let user = {
+          "email": this.emailLogin,
+          "password": this.passwordLogin
+        };
+        this.$store.dispatch("auth/login", user).then(
+          () => {
+            this.$router.push("/dashboard");
+          }, (error) => {
+            console.log(error);
+            this.message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+            alert(this.message);
+          }
+        );
       }
     }
   }
+}
 </script>
 <style lang="scss" scoped>
   @import "@sass/pages/login.scss";

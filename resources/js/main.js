@@ -5,6 +5,7 @@ import App from './App.vue';
 import '@css/styles.css';
 
 import router from './router';
+import store from "./store";
 
 /* Set up using Vue 3 */
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -22,6 +23,7 @@ const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 app.use(router);
+app.use(store);
 // Mount vue app
 app.mount('#app');
 
