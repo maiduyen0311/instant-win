@@ -1,0 +1,17 @@
+{
+  // Set the default
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Enable per-language
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[vue]": {
+    "editor.formatOnSave": true
+  },
+  "[php]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+  }
+}

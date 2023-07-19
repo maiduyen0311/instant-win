@@ -1,14 +1,14 @@
 const tabMixin = {
   data() {
     return {
-      activeTab: ''
-    };
+      activeTab: '',
+    }
   },
   methods: {
     changeTab(tab) {
-      this.activeTab = tab;
-    }
-  }
-};
+      this.activeTab = tab
+    },
+  },
+}
 
-export default tabMixin;
+export default tabMixin

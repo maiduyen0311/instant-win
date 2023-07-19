@@ -23,17 +23,17 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'Campaign',
-    data() {
-      return {
-        activeTab: 'public'
-      };
-    },
-    methods: {
-      changeTab(tab) {
-        this.activeTab = tab;
-      }
+export default {
+  name: 'Campaign',
+  data() {
+    return {
+      activeTab: 'public',
     }
-  }
+  },
+  methods: {
+    changeTab(tab) {
+      this.activeTab = tab
+    },
+  },
+}
 </script>

@@ -1,8 +1,8 @@
 <script setup>
-import tabMixin from '../tabs';
-import AccountSetting from '@components/account-settings/Account.vue';
-import BusinessProfile from '@components/account-settings/Business.vue';
-import CreditCard from '@components/account-settings/CreditCard.vue';
+import tabMixin from '../tabs'
+import AccountSetting from '@components/account-settings/Account.vue'
+import BusinessProfile from '@components/account-settings/Business.vue'
+import CreditCard from '@components/account-settings/CreditCard.vue'
 </script>
 <template>
   <div class="page-title">
@@ -17,7 +17,8 @@ import CreditCard from '@components/account-settings/CreditCard.vue';
         <a class="nav-link" :class="{ active: activeTab === 'brand' }" @click="changeTab('brand')">ブランド</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" :class="{ active: activeTab === 'creditCard' }" @click="changeTab('creditCard')">現在のクレジットカード</a>
+        <a class="nav-link" :class="{ active: activeTab === 'creditCard' }"
+          @click="changeTab('creditCard')">現在のクレジットカード</a>
       </li>
     </ul>
     <div class="tab-content">
@@ -34,16 +35,16 @@ import CreditCard from '@components/account-settings/CreditCard.vue';
   </div>
 </template>
 <script>
-  export default {
-  	name: 'Accounts',
-    data() {
-      return {
-        activeTab: 'account'
-      };
-    },
-    mixins: [tabMixin]
-  }
+export default {
+  name: 'Accounts',
+  data() {
+    return {
+      activeTab: 'account',
+    }
+  },
+  mixins: [tabMixin],
+}
 </script>
 <style lang="scss">
-  @import "@sass/pages/accounts.scss";
+@import '@sass/pages/accounts.scss';
 </style>

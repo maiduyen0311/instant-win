@@ -1,5 +1,3 @@
 <template>
-  <div class="container">
-    Page Contact
-  </div>
+  <div class="container">Page Contact</div>
 </template>
