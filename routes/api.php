@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,8 @@ Route::group([
   Route::get('/logout', [AuthController::class, 'logout']);
   Route::post('/refresh', [AuthController::class, 'refresh']);
   Route::get('/user-profile', [AuthController::class, 'getUserLogin']);
+
+
 });
+Route::get('/user/getLineChannelSetting/{id}', [UserController::class, 'getLineChannelSetting']);
+Route::put('/user/changeLineChannelSetting', [UserController::class, 'changeLineChannelSetting']);
