@@ -1,9 +1,10 @@
 <script setup>
-import avatar from '@img/avatar.png';
+import avatar from '@img/avatar.png'
 </script>
 <template>
   <div class="account-header mb-5">
-    <div class="account-header__avatar"><img :src="avatarSrc" alt="Avatar">
+    <div class="account-header__avatar">
+      <img :src="avatarSrc" alt="Avatar" />
       <span class="edit"><font-awesome-icon :icon="['fas', 'pen-to-square']" /></span>
     </div>
   </div>
@@ -12,14 +13,16 @@ import avatar from '@img/avatar.png';
       <div class="mb-3 col-6">
         <div class="form-group">
           <label class="form-label" for="name">名前</label>
-          <input type="text" v-model="name" class="form-control" placeholder="名前" autocomplete="off" required>
+          <input type="text" v-model="name" class="form-control" placeholder="名前" autocomplete="off" required />
         </div>
       </div>
       <div class="mb-3 col-6">
         <div class="form-group">
           <label class="form-label" for="language">言語設定</label>
           <select class="form-control" v-model="language" name="language">
-            <option value="japan" selected>日本語</option>
+            <option value="japan" selected>
+              日本語
+            </option>
             <option value="korea">한국어</option>
           </select>
         </div>
@@ -42,8 +45,10 @@ import avatar from '@img/avatar.png';
           <label class="form-label" for="change-email">メールアドレスを変更する</label>
           <div class="row">
             <div class="mb-3 col-6">
-              <input type="email" v-model="email1" class="form-control" placeholder="メールアドレスを入力" autocomplete="off" required>
-              <input type="email" v-model="email2" class="form-control" placeholder="メールアドレスを再度入力" autocomplete="off" required>
+              <input type="email" v-model="email1" class="form-control" placeholder="メールアドレスを入力" autocomplete="off"
+                required />
+              <input type="email" v-model="email2" class="form-control" placeholder="メールアドレスを再度入力" autocomplete="off"
+                required />
             </div>
           </div>
           <p class="small mt-2">新しいメールアドレスに認証リンクが送信され、認証するとメールアドレスが変更されます。</p>
@@ -63,14 +68,17 @@ import avatar from '@img/avatar.png';
       <div class="mb-3 col-6">
         <div class="form-group">
           <label class="form-label" for="pass-current">現在のパスワード</label>
-          <input type="password" v-model="passCurrent" class="form-control" placeholder="現在のパスワード" autocomplete="off" required>
+          <input type="password" v-model="passCurrent" class="form-control" placeholder="現在のパスワード" autocomplete="off"
+            required />
         </div>
       </div>
       <div class="mb-3 col-6">
         <div class="form-group">
           <label class="form-label" for="pass-new">新しいパスワード</label>
-          <input type="password" v-model="passNew1" class="form-control" placeholder="新しいパスワード" autocomplete="off" required>
-          <input type="password" v-model="passNew2" class="form-control" placeholder="新しいパスワード" autocomplete="off" required>
+          <input type="password" v-model="passNew1" class="form-control" placeholder="新しいパスワード" autocomplete="off"
+            required />
+          <input type="password" v-model="passNew2" class="form-control" placeholder="新しいパスワード" autocomplete="off"
+            required />
         </div>
       </div>
     </div>
@@ -88,22 +96,30 @@ export default {
     return {
       avatarSrc: avatar,
       name: '',
-      language:'',
-      email1:'',
-      email2:'',
-      passCurrent:'',
-      passNew1:'',
-      passNew2:'',
+      language: '',
+      email1: '',
+      email2: '',
+      passCurrent: '',
+      passNew1: '',
+      passNew2: '',
       emptyFields: false,
-      url :'/'
-    };
+      url: '/',
+    }
   },
   methods: {
     doLogin() {
-      if (this.name === "" || this.language === "" || this.email1 === "" || this.email2 === "" || this.passCurrent === "" || this.passNew1 === "" || this.passNew2 === "") {
-        this.emptyFields = true;
+      if (
+        this.name === '' ||
+        this.language === '' ||
+        this.email1 === '' ||
+        this.email2 === '' ||
+        this.passCurrent === '' ||
+        this.passNew1 === '' ||
+        this.passNew2 === ''
+      ) {
+        this.emptyFields = true
       }
-    }
-  }
+    },
+  },
 }
 </script>

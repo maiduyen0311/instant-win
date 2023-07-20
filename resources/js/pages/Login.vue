@@ -23,6 +23,7 @@
     </div>
   </section>
 </template>
+
 <script>
   export default {
     name: 'login',
@@ -40,15 +41,45 @@
         helpcenter: "利用規約　ヘルプ"
       };
     },
-    methods: {
-      doLogin() {
-        if (this.emailLogin === "" || this.passwordLogin === "") {
-          this.emptyFields = true;
-        }
-      }
+  },
+  created() {
+    if (this.loggedIn) {
+      this.$router.push('/dashboard')
     }
-  }
+  },
+  methods: {
+    async login() {
+      if (this.emailLogin === '' || this.passwordLogin === '') {
+        this.emptyFields = true
+      } else {
+        let password = this.passwordLogin;
+        let encoder = new TextEncoder();
+        let data = encoder.encode(password);
+        let hash = await crypto.subtle.digest("SHA-256", data);
+        let hashArray = Array.from(new Uint8Array(hash));
+        let hashHexPassword = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+        let user = {
+          email: this.emailLogin,
+          password: hashHexPassword,
+        }
+        this.$store.dispatch('auth/login', user).then(
+          () => {
+            this.$router.push('/dashboard')
+          },
+          error => {
+            console.log(error)
+            this.message =
+              (error.response && error.response.data && error.response.data.message) ||
+              error.message ||
+              error.toString()
+            alert(this.message)
+          },
+        )
+      }
+    },
+  },
+}
 </script>
 <style lang="scss" scoped>
-  @import "@sass/pages/login.scss";
+@import '@sass/pages/login.scss';
 </style>

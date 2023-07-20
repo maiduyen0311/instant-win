@@ -1,21 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Campaign from '../layouts/Campaign.vue';
-import HelpCenter from '../layouts/HelpCenter.vue';
-import Contact from '../layouts/Contact.vue';
-import Error from '../layouts/error.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import Campaign from '../layouts/Campaign.vue'
+import HelpCenter from '../layouts/HelpCenter.vue'
+import Contact from '../layouts/Contact.vue'
+import Error from '../layouts/error.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_PATH),
   routes: [
-    { path: '/', name: 'Campaign', component: Campaign, meta: { title: 'Campaign'} },
+    { path: '/', name: 'Campaign', component: Campaign, meta: { title: 'Campaign' } },
     {
       path: '/login',
       name: 'login',
       component: () => import('../pages/Login.vue'),
       meta: {
-        title: 'Login' ,
-        class: 'page-login'
-      }
+        title: 'Login',
+        class: 'page-login',
+      },
     },
     { path: '/', redirect: '/dashboard' },
     {
@@ -28,8 +28,8 @@ const router = createRouter({
           component: () => import('../pages/Dashboard.vue'),
           meta: {
             title: 'Dashboard',
-            class: 'page-dashboard admin-page'
-          }
+            class: 'page-dashboard admin-page',
+          },
         },
         {
           path: '/accounts',
@@ -37,17 +37,17 @@ const router = createRouter({
           component: () => import('../pages/Accounts.vue'),
           meta: {
             title: 'Accounts',
-            class: 'page-accounts admin-page'
-          }
+            class: 'page-accounts admin-page',
+          },
         },
         {
-          path: '/chanels',
-          name: 'chanels',
-          component: () => import('../pages/Chanels.vue'),
+          path: '/channels',
+          name: 'channels',
+          component: () => import('../pages/Channels.vue'),
           meta: {
-            title: 'Chanels',
-            class: 'page-chanels admin-page'
-          }
+            title: 'Channels',
+            class: 'page-channels admin-page',
+          },
         },
         {
           path: '/plans',
@@ -55,19 +55,18 @@ const router = createRouter({
           component: () => import('../pages/Plans.vue'),
           meta: {
             title: 'Plans',
-            class: 'page-plans admin-page'
-          }
-        }
-      ]
+            class: 'page-plans admin-page',
+          },
+        },
+      ],
     },
-    { path: '/help-center', name: 'help-center', component: HelpCenter, meta: { title: 'Help Center'} },
-    { path: '/contact', name: 'contact', component: Contact, meta: { title: 'Contact'} },
+    { path: '/help-center', name: 'help-center', component: HelpCenter, meta: { title: 'Help Center' } },
+    { path: '/contact', name: 'contact', component: Contact, meta: { title: 'Contact' } },
     {
       path: '/:catchAll(.*)',
-      component: Error
-    }
-  ]
-});
+      component: Error,
+    },
+  ],
+})
 
-export default router;
-
+export default router

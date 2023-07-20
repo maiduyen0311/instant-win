@@ -1,4 +1,5 @@
 <script setup>
+
 import entryMethod from '@components/campaign/Entry-method.vue';
 import lotteryMethod from '@components/campaign/Lottery-method.vue';
 import tabMixin from '../tabs';
@@ -71,17 +72,17 @@ import myCampaign from '@img/my-campaign.jpg';
               <tr>
                 <td class="check">
                   <label class="checkbox">
-                    <input type="checkbox" value="" name="">
+                    <input type="checkbox" value="" name="" />
                     <span class="checked"></span>
                   </label>
                 </td>
                 <td class="info">
                   <div class="info-campaign">
-                    <div class="info-campaign__img"><img :src="campaignSrc" alt="My Campaign"></div>
+                    <div class="info-campaign__img">
+                      <img :src="campaignSrc" alt="My Campaign" />
+                    </div>
                     <div class="info-campaign__txt">
-                      <div class="ttl">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      </div>
+                      <div class="ttl">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                       <div class="info-campaign__type">
                         <span>シングルエントリー</span>
                         <span>インスタントウイン</span>
@@ -108,17 +109,17 @@ import myCampaign from '@img/my-campaign.jpg';
               <tr>
                 <td class="check">
                   <label class="checkbox">
-                    <input type="checkbox" value="" name="">
+                    <input type="checkbox" value="" name="" />
                     <span class="checked"></span>
                   </label>
                 </td>
                 <td class="info">
                   <div class="info-campaign">
-                    <div class="info-campaign__img"><img :src="campaignSrc" alt="My Campaign"></div>
+                    <div class="info-campaign__img">
+                      <img :src="campaignSrc" alt="My Campaign" />
+                    </div>
                     <div class="info-campaign__txt">
-                      <div class="ttl">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      </div>
+                      <div class="ttl">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                       <div class="info-campaign__type">
                         <span>シングルエントリー</span>
                         <span>インスタントウイン</span>
@@ -145,17 +146,17 @@ import myCampaign from '@img/my-campaign.jpg';
               <tr>
                 <td class="check">
                   <label class="checkbox">
-                    <input type="checkbox" value="" name="">
+                    <input type="checkbox" value="" name="" />
                     <span class="checked"></span>
                   </label>
                 </td>
                 <td class="info">
                   <div class="info-campaign">
-                    <div class="info-campaign__img"><img :src="campaignSrc" alt="My Campaign"></div>
+                    <div class="info-campaign__img">
+                      <img :src="campaignSrc" alt="My Campaign" />
+                    </div>
                     <div class="info-campaign__txt">
-                      <div class="ttl">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      </div>
+                      <div class="ttl">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                       <div class="info-campaign__type">
                         <span>シングルエントリー</span>
                         <span>インスタントウイン</span>
@@ -182,17 +183,17 @@ import myCampaign from '@img/my-campaign.jpg';
               <tr>
                 <td class="check">
                   <label class="checkbox">
-                    <input type="checkbox" value="" name="">
+                    <input type="checkbox" value="" name="" />
                     <span class="checked"></span>
                   </label>
                 </td>
                 <td class="info">
                   <div class="info-campaign">
-                    <div class="info-campaign__img"><img :src="campaignSrc" alt="My Campaign"></div>
+                    <div class="info-campaign__img">
+                      <img :src="campaignSrc" alt="My Campaign" />
+                    </div>
                     <div class="info-campaign__txt">
-                      <div class="ttl">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      </div>
+                      <div class="ttl">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                       <div class="info-campaign__type">
                         <span>シングルエントリー</span>
                         <span>インスタントウイン</span>
@@ -276,5 +277,5 @@ import myCampaign from '@img/my-campaign.jpg';
   }
 </script>
 <style lang="scss" scoped>
-  @import "@sass/pages/dashboard.scss";
+@import '@sass/pages/dashboard.scss';
 </style>
