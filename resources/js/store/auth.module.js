@@ -19,8 +19,13 @@ export const auth = {
         },
       )
     },
+    checklogin({ commit }) {
+      // commit('checkLogin')
+      return AuthService.checklogin()
+    },
     logout({ commit }) {
       AuthService.logout()
+      localStorage.removeItem('user')
       commit('logout')
     },
     register({ commit }, user) {
