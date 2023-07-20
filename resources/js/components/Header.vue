@@ -6,20 +6,25 @@ export default {
       logoSrc: logo,
       emailLink: 'mailto:example@example.com',
       isDropdownOpen: false,
-      userLogin: this.$store.state.auth.user ? this.$store.state.auth.user : []
+      userLogin: {},
     }
-  },
-  computed: {
-    loggedIn() {
-      return this.$store.state.auth.status.loggedIn
-    },
   },
   created() {
-    if (!this.loggedIn) {
-      this.$store.dispatch('auth/logout')
-    }
+    this.$watch(() => this.$route.params, () => {
+      this.checklogin(this)
+    })
   },
   methods: {
+    checklogin($this) {
+      this.$store.dispatch('auth/checklogin').then(response => {
+        this.userLogin = response.data
+        if (this.$route.name === 'login') {
+          this.$router.push('/dashboard')
+        }
+      }).catch(function (error) {
+        $this.$router.push('/login')
+      });
+    },
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen
     },

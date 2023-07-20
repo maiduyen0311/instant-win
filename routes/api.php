@@ -25,8 +25,11 @@ Route::group([
   Route::get('/logout', [AuthController::class, 'logout']);
   Route::post('/refresh', [AuthController::class, 'refresh']);
   Route::get('/user-profile', [AuthController::class, 'getUserLogin']);
-
-
+  Route::get('/logout', [AuthController::class, 'logout']);
 });
+
+Route::get('/auth/checklogin', [AuthController::class, 'checklogin']);
 Route::get('/user/getLineChannelSetting/{id}', [UserController::class, 'getLineChannelSetting']);
 Route::put('/user/changeLineChannelSetting', [UserController::class, 'changeLineChannelSetting']);
+Route::post('/user/changeUserPassword', [UserController::class, 'changeUserPassword']);
+Route::post('/user/changeUserEmail', [UserController::class, 'changeUserEmail']);
