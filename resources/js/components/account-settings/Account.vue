@@ -25,6 +25,11 @@ import avatar from '@img/avatar.png';
         </div>
       </div>
     </div>
+    <div class="form-btn">
+      <a class="btn btn-primary" :href="url">保存 Name</a>
+    </div>
+  </form>
+  <form class="form account-form" action="" method="" enctype="">
     <div class="row account-form__email">
       <div class="col-12 mb-5 form-title">
         <h3 class="title">メールアドレス設定</h3>
@@ -45,6 +50,11 @@ import avatar from '@img/avatar.png';
         </div>
       </div>
     </div>
+    <div class="form-btn">
+      <a class="btn btn-primary" :href="url">保存 Email</a>
+    </div>
+  </form>
+  <form class="form account-form" action="" method="" enctype="">
     <div class="row account-form__password">
       <div class="col-12 mb-5 form-title">
         <h3 class="title">パスワード変更</h3>
@@ -64,11 +74,13 @@ import avatar from '@img/avatar.png';
         </div>
       </div>
     </div>
-    <div class="form-btn d-flex justify-content-center">
-      <a class="btn btn-second" :href="url">アカウント削除</a>
-      <a class="btn btn-primary" :href="url">保存</a>
+    <div class="form-btn d-flex">
+      <a class="btn btn-primary" :href="url">保存 Pass</a>
     </div>
   </form>
+  <div class="form-btn d-flex justify-content-center">
+    <a class="btn btn-second" :href="url">アカウント削除</a>
+  </div>
 </template>
 <script>
 export default {

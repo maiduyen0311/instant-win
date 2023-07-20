@@ -4,6 +4,10 @@
 @import "variable";
 @import "basic/reset";
 @import "basic/base";
+
+@import "component/modal";
+@import "component/card";
+
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/layout";

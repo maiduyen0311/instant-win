@@ -1,4 +1,6 @@
 <script setup>
+import entryMethod from '@components/campaign/Entry-method.vue';
+import lotteryMethod from '@components/campaign/Lottery-method.vue';
 import tabMixin from '../tabs';
 import myCampaign from '@img/my-campaign.jpg';
 </script>
@@ -14,7 +16,24 @@ import myCampaign from '@img/my-campaign.jpg';
         <h2 class="ttl">マイキャンペーン</h2>
       </div>
       <div class="col-4 page-title__right">
-        <a class="btn btn-primary btn-dashboard" href="">新しいキャンペーンを作成</a>
+        <span class="btn btn-primary btn-dashboard" @click="openPopup_Entry">新しいキャンペーンを作成</span>
+        <div class="modal fade" v-if="visible_entry || visible_lottery" :class="{ show: activeModal !== '' }">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header"><span class="return" v-if="activeModal !== 'entry'" @click="openPopup_Entry"><font-awesome-icon :icon="['fas', 'arrow-left']" /></span><span @click="hidePopup" class="close"><font-awesome-icon :icon="['fas', 'xmark']" /></span></div>
+              <div class="modal-body" v-if="activeModal === 'entry'">
+                <entryMethod></entryMethod>
+              </div>
+              <div class="modal-body" v-if="activeModal === 'lottery'">
+                <lotteryMethod></lotteryMethod>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-second close" @click="hidePopup">キャンセル</button>
+                <button class="btn btn-primary" @click="openPopup_Lottery">次へ</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -223,11 +242,35 @@ import myCampaign from '@img/my-campaign.jpg';
 <script>
   export default {
   	name: 'Dashboard',
+    components: {
+      entryMethod,
+      lotteryMethod
+    },
     data() {
       return {
         activeTab: 'all',
-        campaignSrc: myCampaign
+        campaignSrc: myCampaign,
+        activeModal: '',
+        visible_entry: false,
+        visible_lottery: false
       };
+    },
+    methods: {
+      openPopup_Entry() {
+        this.activeModal = 'entry';
+        this.visible_entry = true;
+        this.visible_lottery = false;
+      },
+      openPopup_Lottery() {
+        this.activeModal = 'lottery';
+        this.visible_entry = false;
+        this.visible_lottery = true;
+      },
+      hidePopup(){
+        this.activeModal = '';
+        this.visible_entry= false;
+        this.visible_lottery= false;
+      }
     },
     mixins: [tabMixin]
   }

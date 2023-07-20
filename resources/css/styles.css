@@ -12319,6 +12319,113 @@ li {
   list-style: none;
 }
 
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+}
+.modal-content {
+  min-height: 40rem;
+  padding: 4rem;
+  border: none;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 10px;
+  text-align: left;
+}
+.modal-header {
+  border: none;
+}
+.modal-header .return,
+.modal-header .close {
+  position: absolute;
+  top: 0;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.modal-header .return svg,
+.modal-header .close svg {
+  width: 24px;
+  height: 24px;
+}
+.modal-header .close {
+  right: 0;
+}
+.modal-header .return {
+  left: 0;
+}
+.modal.show {
+  display: flex;
+}
+.modal.show > div {
+  flex: 1;
+}
+.modal .page-title {
+  text-align: center;
+}
+.modal-footer {
+  margin-left: -4rem;
+  margin-right: -4rem;
+  padding: 2rem 4rem;
+  padding-bottom: 0;
+  margin-top: 4rem;
+  gap: 2rem;
+}
+.modal-footer > * {
+  margin: 0;
+}
+.modal-footer .btn {
+  min-width: 20rem;
+}
+
+.card-wrapper {
+  all: unset;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem 4rem;
+}
+.card-wrapper .card {
+  flex: 1 1 100%;
+  padding: 3rem;
+  border: 2px solid #e7e6e8;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  color: var(--body-color);
+}
+.card-wrapper .card-checked {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  transition: all 0.2s ease 0.1s;
+}
+.card-wrapper .card.selected {
+  border-color: #02488f;
+}
+.card-wrapper .card.selected .card-checked {
+  background-color: #02488f;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #02488f;
+}
+.card-wrapper .card-title {
+  margin-bottom: 2rem;
+}
+.card-wrapper .card-title__img {
+  margin-bottom: 1.5rem;
+}
+.card-wrapper .card-title .title {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
 :root {
   --logo-width: 31rem;
   --header-padding-y: 2rem;
@@ -12625,7 +12732,6 @@ body.admin-page.activeshrink .dashboard-nav + .main__content {
 .btn {
   padding: 1.2rem 2.5rem;
   line-height: 1.4;
-  min-width: 40%;
   font-size: var(--body-size);
   font-weight: 600;
   border: none;
