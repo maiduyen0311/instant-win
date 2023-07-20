@@ -48,13 +48,19 @@ export default {
     }
   },
   methods: {
-    login() {
+    async login() {
       if (this.emailLogin === '' || this.passwordLogin === '') {
         this.emptyFields = true
       } else {
+        let password = this.passwordLogin;
+        let encoder = new TextEncoder();
+        let data = encoder.encode(password);
+        let hash = await crypto.subtle.digest("SHA-256", data);
+        let hashArray = Array.from(new Uint8Array(hash));
+        let hashHexPassword = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
         let user = {
           email: this.emailLogin,
-          password: this.passwordLogin,
+          password: hashHexPassword,
         }
         this.$store.dispatch('auth/login', user).then(
           () => {
