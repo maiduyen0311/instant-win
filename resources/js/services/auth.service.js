@@ -1,5 +1,4 @@
 import axios from 'axios'
-import authHeader from './auth-header'
 
 const API_URL = import.meta.env.VITE_BASE_PATH + 'api/auth/'
 
@@ -19,12 +18,8 @@ class AuthService {
       })
   }
 
-  checklogin() {
-    return axios.get(API_URL + 'checklogin', { headers: authHeader() })
-  }
-
   logout() {
-    return axios.get(API_URL + 'logout', { headers: authHeader() })
+    localStorage.removeItem('user')
   }
 
   register(user) {
