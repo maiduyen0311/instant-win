@@ -75,9 +75,13 @@ class AuthController extends Controller
     ]);
   }
 
-  public function getUserLogin()
+  public function checklogin()
   {
-    return response()->json([]);
-    // return response()->json(Auth::user());
+    $user = Auth::user();
+    if ($user) {
+      return response()->json(Auth::user());
+    } else {
+      return false;
+    }
   }
 }
