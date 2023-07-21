@@ -12,13 +12,13 @@ import avatar from '@img/avatar.png'
     <div class="row account-form__name">
       <div class="mb-3 col-6">
         <div class="form-group">
-          <label class="form-label" for="name">名前</label>
+          <label class="form-label">名前</label>
           <input type="text" v-model="name" class="form-control" placeholder="名前" autocomplete="off" required />
         </div>
       </div>
       <div class="mb-3 col-6">
         <div class="form-group">
-          <label class="form-label" for="language">言語設定</label>
+          <label class="form-label">言語設定</label>
           <select class="form-control" v-model="language" name="language">
             <option value="japan" selected>
               日本語
@@ -42,13 +42,13 @@ import avatar from '@img/avatar.png'
       </div>
       <div class="mb-3 col-12">
         <div class="form-group">
-          <label class="form-label" for="change-email">メールアドレスを変更する</label>
+          <label class="form-label">メールアドレスを変更する</label>
           <div class="row">
             <div class="mb-3 col-6">
               <input type="email" v-model="email1" class="form-control" placeholder="メールアドレスを入力" autocomplete="off"
                 required />
-              <input type="email" v-model="email2" class="form-control" placeholder="メールアドレスを再度入力" autocomplete="off"
-                required />
+              <!-- <input type="email" v-model="email2" class="form-control" placeholder="メールアドレスを再度入力" autocomplete="off"
+                required /> -->
             </div>
           </div>
           <p class="small mt-2">新しいメールアドレスに認証リンクが送信され、認証するとメールアドレスが変更されます。</p>
@@ -59,7 +59,7 @@ import avatar from '@img/avatar.png'
       <a class="btn btn-primary" :href="url">保存 Email</a>
     </div>
   </form>
-  <form class="form account-form" action="" method="" enctype="">
+  <form class="form account-form" @submit.prevent="changeUserPassword">
     <div class="row account-form__password">
       <div class="col-12 mb-5 form-title">
         <h3 class="title">パスワード変更</h3>
@@ -67,23 +67,23 @@ import avatar from '@img/avatar.png'
       </div>
       <div class="mb-3 col-6">
         <div class="form-group">
-          <label class="form-label" for="pass-current">現在のパスワード</label>
-          <input type="password" v-model="passCurrent" class="form-control" placeholder="現在のパスワード" autocomplete="off"
+          <label class="form-label">現在のパスワード</label>
+          <input type="password" v-model="password.old" class="form-control" placeholder="現在のパスワード" autocomplete="off"
             required />
         </div>
       </div>
       <div class="mb-3 col-6">
         <div class="form-group">
-          <label class="form-label" for="pass-new">新しいパスワード</label>
-          <input type="password" v-model="passNew1" class="form-control" placeholder="新しいパスワード" autocomplete="off"
+          <label class="form-label">新しいパスワード</label>
+          <input type="password" v-model="password.new" class="form-control" placeholder="新しいパスワード" autocomplete="off"
             required />
-          <input type="password" v-model="passNew2" class="form-control" placeholder="新しいパスワード" autocomplete="off"
+          <input type="password" v-model="password.confirm" class="form-control" placeholder="新しいパスワード" autocomplete="off"
             required />
         </div>
       </div>
     </div>
     <div class="form-btn d-flex">
-      <a class="btn btn-primary" :href="url">保存 Pass</a>
+      <input type="submit" class="btn btn-primary" @click="doLogin" value="保存 Pass">
     </div>
   </form>
   <div class="form-btn d-flex justify-content-center">
@@ -91,6 +91,7 @@ import avatar from '@img/avatar.png'
   </div>
 </template>
 <script>
+import userService from "./../../services/user.service";
 export default {
   data() {
     return {
@@ -99,26 +100,44 @@ export default {
       language: '',
       email1: '',
       email2: '',
-      passCurrent: '',
-      passNew1: '',
-      passNew2: '',
       emptyFields: false,
       url: '/',
+      user_id: this.$store.state.auth.user ? this.$store.state.auth.user.id : null,
+      password: {
+        old: '',
+        new: '',
+        confirm: ''
+      }
     }
   },
+  computed: {
+
+  },
   methods: {
-    doLogin() {
-      if (
-        this.name === '' ||
-        this.language === '' ||
-        this.email1 === '' ||
-        this.email2 === '' ||
-        this.passCurrent === '' ||
-        this.passNew1 === '' ||
-        this.passNew2 === ''
-      ) {
-        this.emptyFields = true
+    changeUserPassword() {
+      if (this.password.new !== this.password.confirm) {
+        alert('password and confirm password do not match');
+        return;
       }
+      if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,12}$/.test(this.password.new)) {
+        alert('At least one upper case English letter,' +
+          'At least one lower case English letter,' +
+          'At least one digit,' +
+          'At least one special character,' +
+          'Password must be 8-12characters long'
+        );
+        return;
+      }
+
+      this.$store.dispatch('helper/sha256', this.password).then(
+        (response) => {
+          userService.changeUserPassword(response, this.user_id).then(
+            (data) => {
+              this.$store.dispatch('auth/logout')
+              this.$router.push('/login')
+            });
+        },
+      )
     },
   },
 }

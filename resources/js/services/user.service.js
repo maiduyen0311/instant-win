@@ -4,20 +4,14 @@ import authHeader from './auth-header'
 const API_URL = import.meta.env.VITE_BASE_PATH + 'api/'
 
 class UserService {
-  getPublicContent() {
-    return axios.get(API_URL + 'all')
+  getLineChannelSetting(id) {
+    return axios.get(API_URL + 'user/getLineChannelSetting/' + id, { headers: authHeader() })
   }
-
-  getUserBoard() {
-    return axios.get(API_URL + 'user', { headers: authHeader() })
+  changeLineSetting(data, id) {
+    return axios.put(API_URL + 'user/changeLineChannelSetting', data, { headers: authHeader() })
   }
-
-  getModeratorBoard() {
-    return axios.get(API_URL + 'mod', { headers: authHeader() })
-  }
-
-  getAdminBoard() {
-    return axios.get(API_URL + 'admin', { headers: authHeader() })
+  changeUserPassword(data, id) {
+    return axios.put(API_URL + 'user/changeUserPassword/' + id, data, { headers: authHeader() })
   }
 }
 

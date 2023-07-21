@@ -7,18 +7,18 @@
       <div class="row">
         <div class="col-6">
           <div class="form-group">
-            <label class="form-label" for="status">ステータス：<span class="txt-success">有効</span>
+            <label class="form-label">ステータス：<span class="txt-success">有効</span>
             </label>
           </div>
           <div class="form-group">
-            <label class="form-label" for="channel_account">公式アカウント名
+            <label class="form-label">公式アカウント名
             </label>
             <p class="small">LINE公式アカウントで設定している名前を入力してください。</p>
             <input type="text" v-model="channel.channel_account" class="form-control" placeholder="Unplug"
               autocomplete="off" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="account_id">アカウントID（プレミアムID 又はベーシックID）</label>
+            <label class="form-label">アカウントID（プレミアムID 又はベーシックID）</label>
             <p class="small">
               <a href="" target="_blank" class="red">LINE Official Account Manager</a>
               で表示されているプレミアムID又はベーシックIDを入力してください。
@@ -27,19 +27,19 @@
               required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="channel_id">チャネルID</label>
+            <label class="form-label">チャネルID</label>
             <p class="small">LINEログイン用のチャネルに表示されているチャネルIDを入力してください。</p>
             <input type="text" v-model="channel.channel_id" class="form-control" placeholder="1661353381"
               autocomplete="off" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="channel_secret">チャネルシークレット</label>
+            <label class="form-label">チャネルシークレット</label>
             <p class="small">LINEログイン用のチャネルに表示されているチャネルシークレットを入力してください。</p>
             <input type="text" v-model="channel.channel_secret" class="form-control"
               placeholder="0803301025f852fde964b3c437b3d1a5" autocomplete="off" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="access_token">長期アクセストークン</label>
+            <label class="form-label">長期アクセストークン</label>
             <p class="small">
               Messaging API用のチャネルのMessaging
               API設定に表示されている長期アクセストークンを入力してください。チャネル（Messaging API）を選択 >
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import lineChangelService from "./../services/line-channel.service";
+import userService from '../services/user.service';
 export default {
   name: 'channels',
   data() {
@@ -73,13 +73,13 @@ export default {
         channel_id: '',
         channel_secret: '',
         access_token: '',
-        user_id: this.$store.state.auth.user.id
+        user_id: this.$store.state.auth.user ? this.$store.state.auth.user.id : null
       },
     };
   },
   computed: {
     getLineChannelSetting() {
-      lineChangelService.getLineChannelSetting(this.$store.state.auth.user.id).then(
+      userService.getLineChannelSetting(this.channel.user_id).then(
         (data) => {
           this.channel = data.data;
         },
@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     changeLineSetting() {
-      lineChangelService.changeLineSetting(this.channel);
+      userService.changeLineSetting(this.channel);
     },
 
   },

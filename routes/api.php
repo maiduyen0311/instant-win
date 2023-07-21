@@ -31,5 +31,5 @@ Route::group([
 Route::get('/auth/checklogin', [AuthController::class, 'checklogin']);
 Route::get('/user/getLineChannelSetting/{id}', [UserController::class, 'getLineChannelSetting']);
 Route::put('/user/changeLineChannelSetting', [UserController::class, 'changeLineChannelSetting']);
-Route::post('/user/changeUserPassword', [UserController::class, 'changeUserPassword']);
+Route::put('/user/changeUserPassword/{id}', [UserController::class, 'changeUserPassword']);
 Route::post('/user/changeUserEmail', [UserController::class, 'changeUserEmail']);
