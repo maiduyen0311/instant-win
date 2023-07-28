@@ -1,14 +1,14 @@
-  $txt-color:             #fff;
-  $login-bkg:             #191714;
-  $login-bkg-gradient:    #022b54;
+$txt-color: #fff;
+$login-bkg: #191714;
+$login-bkg-gradient: #022b54;
 
-body.page-login{
+body.page-login #app {
   background: url(@img/bkg-body.jpg) no-repeat center;
   background-size: cover;
   position: relative;
   min-height: 100vh;
-  &::before{
-    content: "";
+  &::before {
+    content: '';
     display: block;
     position: absolute;
     z-index: -1;
@@ -16,18 +16,18 @@ body.page-login{
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 }
-.login{
-  &__inner{
+.login {
+  &__inner {
     max-width: 40%;
     margin: 0 auto;
     background: $login-bkg;
-    background: -webkit-linear-gradient(top,$login-bkg-gradient, $login-bkg);
-    background: -o-linear-gradient(top,$login-bkg-gradient, $login-bkg);
-    background: -moz-linear-gradient(top,$login-bkg-gradient, $login-bkg);
-    background: linear-gradient(top,$login-bkg-gradient, $login-bkg);
+    background: -webkit-linear-gradient(top, $login-bkg-gradient, $login-bkg);
+    background: -o-linear-gradient(top, $login-bkg-gradient, $login-bkg);
+    background: -moz-linear-gradient(top, $login-bkg-gradient, $login-bkg);
+    background: linear-gradient(top, $login-bkg-gradient, $login-bkg);
     padding: 4rem;
     min-height: 65rem;
     border-radius: 1rem;
@@ -36,17 +36,17 @@ body.page-login{
     justify-content: space-evenly;
     align-items: center;
     color: $txt-color;
-    .heading{
+    .heading {
       text-transform: uppercase;
-      font-size: calc(var(--body-size) + 1.2rem );
+      font-size: calc(var(--body-size) + 1.2rem);
       color: $txt-color;
     }
   }
-  .form{
-    &-login{
+  .form {
+    &-login {
       width: 80%;
     }
-    &-control{
+    &-control {
       padding: 1rem 0 1rem 3.5rem;
       font-weight: 500;
       border-radius: 0;
@@ -59,10 +59,10 @@ body.page-login{
       border: none;
       &::placeholder,
       &:-ms-input-placeholder,
-      &::-webkit-input-placeholder{
+      &::-webkit-input-placeholder {
         color: $txt-color;
       }
-      & + .focus__form-control{
+      & + .focus__form-control {
         position: absolute;
         display: block;
         width: 100%;
@@ -70,23 +70,23 @@ body.page-login{
         top: 0;
         left: 0;
         pointer-events: none;
-        &::before{
-          content: "";
+        &::before {
+          content: '';
           display: block;
           position: absolute;
           bottom: -2px;
           left: 0;
           width: 0;
           height: 2px;
-          -webkit-transition: all .4s;
-          -o-transition: all .4s;
-          -moz-transition: all .4s;
-          transition: all .4s;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          transition: all 0.4s;
           background-color: #fff;
         }
-        svg{
+        svg {
           position: absolute;
-          top:50%;
+          top: 50%;
           transform: translateY(-50%);
           left: 0;
           width: 20px;
@@ -94,32 +94,32 @@ body.page-login{
         }
       }
       &:focus,
-      &:active{
-        border-bottom-color: transparent!important;
+      &:active {
+        border-bottom-color: transparent !important;
         outline: none;
         box-shadow: none;
-        & + .focus__form-control{
-          &::before{
+        & + .focus__form-control {
+          &::before {
             width: 100%;
           }
         }
       }
     }
-    &-group{
+    &-group {
       position: relative;
       display: block;
       margin: 0;
       padding: 0;
-      border-bottom: 2px solid rgba(255,255,255,.24);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.24);
     }
   }
-  .btn{
+  .btn {
     font-size: var(--body-size);
     min-width: 20rem;
     border-radius: 3px;
     font-weight: 600;
     text-transform: uppercase;
-    -webkit-transition : all 200ms linear;
+    -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
     padding: 1.2rem 2rem;
     min-height: 4rem;
@@ -140,9 +140,9 @@ body.page-login{
     border: none;
     background-color: #fff;
     color: #333;
-    box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+    box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
   }
-  a{
+  a {
     text-decoration: none;
     color: $txt-color;
     font-size: calc(var(--body-size) - 0.2rem);

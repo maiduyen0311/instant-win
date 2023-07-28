@@ -2,24 +2,23 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Campaign from '../layouts/Campaign.vue';
 import HelpCenter from '../layouts/HelpCenter.vue';
 import Contact from '../layouts/Contact.vue';
+import CreateCampaign from '../layouts/Campaigns/Create-campaign.vue';
 import Error from '../layouts/error.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_PATH),
   routes: [
-    { path: '/', name: 'Campaign', component: Campaign, meta: { title: 'Campaign'} },
     {
       path: '/login',
       name: 'login',
       component: () => import('../pages/Login.vue'),
       meta: {
-        title: 'Login' ,
+        title: 'Login',
         class: 'page-login'
       }
     },
-    { path: '/', redirect: '/dashboard' },
     {
-      path: '/',
+      path: '/dashboard',
       component: () => import('../layouts/Admin.vue'),
       children: [
         {
@@ -60,8 +59,10 @@ const router = createRouter({
         }
       ]
     },
-    { path: '/help-center', name: 'help-center', component: HelpCenter, meta: { title: 'Help Center'} },
-    { path: '/contact', name: 'contact', component: Contact, meta: { title: 'Contact'} },
+    { path: '/', name: 'Campaign', component: Campaign, meta: { title: 'Campaign' } },
+    { path: '/campaigns/create', name: 'createCampaign', component: CreateCampaign, meta: { title: 'Create Campaign' } },
+    { path: '/help-center', name: 'help-center', component: HelpCenter, meta: { title: 'Help Center' } },
+    { path: '/contact', name: 'contact', component: Contact, meta: { title: 'Contact' } },
     {
       path: '/:catchAll(.*)',
       component: Error

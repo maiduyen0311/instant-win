@@ -1,82 +1,84 @@
 :root {
-  --logo-width:         31rem;
-  --header-padding-y:   2rem;
-  --header-padding-x:   2rem;
+  --logo-width: 31rem;
+  --header-padding-y: 2rem;
+  --header-padding-x: 2rem;
 
-  --nav-top-color:      #333;
-  --nav-top-weight:     500;
-  --nav-top-size:       1.4rem;
+  --nav-top-color: #333;
+  --nav-top-weight: 500;
+  --nav-top-size: 1.4rem;
 
-  --search-width:       24rem;
+  --search-width: 24rem;
 }
-.header{
-  &-logo{
+.header {
+  margin-bottom: 4rem;
+  &-logo {
     max-width: var(--logo-width);
   }
-  .logo{
-    a{
+  .logo {
+    a {
       display: block;
     }
-    img{
+    img {
       max-width: 100%;
     }
   }
-  &-nav{
+  &-nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    &--item{
+    &--item {
       margin-left: 2rem;
-      &:first-child{
-          margin-left: 0;
+      &:first-child {
+        margin-left: 0;
       }
-      &.my-account{
-        span{
+      &.my-account {
+        span {
           cursor: pointer;
         }
       }
-      &.dropdown{
-        .dropdown-menu{
+      &.dropdown {
+        .dropdown-menu {
           position: absolute;
           right: 0;
           top: auto;
           width: 20rem;
           background: #fff;
-          box-shadow: 0 5px 5px -3px rgba(58,53,65, 0.08),0 8px 10px 1px rgba(58,53,65, 0.12),0 3px 14px 2px rgba(58,53,65, 0.04);
+          box-shadow: 0 5px 5px -3px rgba(58, 53, 65, 0.08), 0 8px 10px 1px rgba(58, 53, 65, 0.12),
+            0 3px 14px 2px rgba(58, 53, 65, 0.04);
           display: block;
-          max-height:500px;
+          max-height: 500px;
           overflow-y: auto;
-          border:none;
-          li{
+          border: none;
+          li {
             span,
-            a{
+            a {
               padding: 1rem 2rem;
               font-size: calc(var(--body-size) - 0.2rem);
               display: block;
             }
-            & > a{
+            & > a {
               display: flex;
               align-items: center;
-              svg{
+              svg {
                 width: 18px;
                 height: 18px;
                 margin-right: 7px;
               }
             }
-            &.name{
+            &.name {
               border-bottom: 1px solid $border-color;
               margin-bottom: 0.5rem;
-              span{
+              span {
                 opacity: 0.8;
                 text-transform: uppercase;
                 font-weight: 700;
               }
             }
-            &.logout{
+            &.logout {
               border-top: 1px solid $border-color;
               margin-top: 0.5rem;
               font-weight: 700;
-              a{
+              a {
                 color: $link;
               }
             }

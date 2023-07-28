@@ -1,54 +1,64 @@
-$white :                            #fff;
-$black:                             #3B4043;
-$red:                               #D83320;
-$skye-blue:                         #294A98;
-$blue:                              #0086AC;
-$green:                             #35A02E;
+$white: #fff;
+$black: #3b4043;
+$red: #d83320;
+$skye-blue: #294a98;
+$blue: #0086ac;
+$green: #35a02e;
 
-$small-color:                       #666;
+$small-color: #666;
 
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-normal: 400;
 
-$font-weight-bold:                  700;
-$font-weight-medium:                500;
-$font-weight-normal:                400;
+$hr-margin-y: 1rem !default;
+$hr-color: inherit !default;
+$hr-border-color: null !default;
+$hr-border-width: 1px !default;
+$hr-opacity: 0.25 !default;
 
+$border-color: #e7e6e8;
+$link: #02488f;
+$link-hover: #dc3545;
 
-$hr-margin-y:                   1rem !default;
-$hr-color:                      inherit !default;
-$hr-border-color:               null !default;
-$hr-border-width:               1px !default;
-$hr-opacity:                    .25 !default;
+$transition: all 0.2s ease 0.1s;
 
-$border-color:                  #e7e6e8;
-$link:                          #02488f;
+$p-margin-top: 1rem;
+$content-margin-top: 5rem;
 
+$th-td-py: 1.5rem;
+$th-td-px: 2rem;
+$th-bkg: #e1ecf7;
 
-$transition:                   all 0.2s ease 0.1s;
+$dashboard-width: 25rem;
+$dashboard-main-padding: 4rem;
+$dashboard-btn-bkg: #b40214;
+$dashboard-btn-color: #fff;
 
-$p-margin-top:                  1rem;
-$content-margin-top:            5rem;
+$page-ttl-size: 2.4rem;
 
-$th-td-py:                      1.5rem;
-$th-td-px:                      2rem;
-$th-bkg:                        #e1ecf7;
+$box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
-$dashboard-width:               25rem;
-$dashboard-main-padding:        4rem;
-$dashboard-btn-bkg:             #b40214;
-$dashboard-btn-color:           #fff;
+$btn-py: 1.2rem;
+$btn-px: 2.5rem;
+$btn-primary-bkg: #022b54;
+$btn-primary-color: #fff;
+$btn-second-bkg: #ebeef0;
+$btn-second-color: #444;
+$btn-third-bkg: #7c030f;
+$btn-third-color: #fff;
 
+$form-control-border: #cecfd4;
 
-$page-ttl-size:                 2.4rem;
+$fieldset-bkg: #f7f8fc;
 
-$box-shadow:                    rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+$admin-content-padding: 4rem;
 
-$btn-py:                        1.2rem;
-$btn-px:                        2.5rem;
-$btn-primary-bkg:               #022b54;
-$btn-primary-color:             #fff;
-$btn-second-bkg:                #ebeef0;
-$btn-second-color:              #444;
+$error: #dc3545;
 
-$form-control-border:           #cecfd4;
+$progress-bar-color: #e9e9e9;
+$progress-color: #666;
+$tooltip-message-bkg: #262626;
 
-$admin-content-padding:         4rem;
+$border-radius: 4px;
