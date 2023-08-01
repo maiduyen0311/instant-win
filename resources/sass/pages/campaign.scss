@@ -17,7 +17,7 @@
   max-width: 50%;
   margin: 0 auto;
   .fieldset {
-    .label {
+    .field-label {
       font-size: calc(var(--body-size) + 0.4rem);
     }
     .noted {
@@ -57,6 +57,14 @@
         border-radius: $border-radius;
       }
     }
+    .--select {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      select {
+        min-width: 9rem;
+      }
+    }
   }
   .heading {
     font-size: calc(var(--body-size) + 0.4rem);
@@ -75,9 +83,94 @@
       line-height: 1;
       bottom: 0;
     }
+    &-sub {
+      margin-bottom: 2rem;
+    }
   }
   .form-btn {
     display: flex;
     justify-content: space-between;
+    margin-top: 5rem;
   }
+}
+.field-label {
+  margin-bottom: 1.5rem;
+}
+.actionsList {
+  margin-bottom: 8rem;
+  .list {
+    &-item {
+      padding: 1.5rem;
+      background-color: $fieldset-bkg;
+      border-radius: $border-radius;
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem 1.5rem;
+      align-items: center;
+      .icon {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $border-radius;
+        img {
+          max-width: 3rem;
+        }
+        &.--line {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+      .--ques {
+        background-color: $icon-ques_bkg;
+      }
+      .--quiz {
+        background-color: $icon-quiz_bkg;
+      }
+      .--game {
+        background-color: $icon-game_bkg;
+      }
+      .--serinumber {
+        background-color: $icon-number_bkg;
+      }
+      .title {
+        flex: 1;
+        .ttl {
+          font-weight: 600;
+          font-size: calc(var(--body-size) + 0.2rem);
+        }
+        .txt {
+          margin: 0.5rem 0 0;
+        }
+      }
+      .btn {
+        max-width: 12rem;
+      }
+      &.--empty {
+        padding: 2rem;
+        text-align: center;
+        border: 2px dashed $border-color;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+.actions-active {
+  margin-bottom: $mgb;
+}
+.actions-list {
+  margin-bottom: $mgb;
+}
+.add-gift {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px dotted $border-color;
+  border-radius: $border-radius;
+  background-color: $fieldset-bkg;
+  min-height: 8rem;
 }

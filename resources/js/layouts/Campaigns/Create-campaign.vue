@@ -41,14 +41,14 @@
               v-if="activeTab === 3"
               :class="{ active: activeTab === 3 }"
             >
-              アクション
+              <actionList></actionList>
             </div>
             <div
               class="tab-pane"
               v-if="activeTab === 4"
               :class="{ active: activeTab === 4 }"
             >
-              ギフト
+              <gift></gift>
             </div>
           </template>
         </tabs>
@@ -61,12 +61,16 @@ import Tabs from '@components/Tabs.vue'
 import basicInfo from '@components/campaign/create/BasicInfo.vue'
 import Creative from '@components/campaign/create/Creative.vue'
 import timePublish from '@components/campaign/create/TimePublish.vue'
+import actionList from '@components/campaign/create/ActionList.vue'
+import gift from '@components/campaign/create/Gift.vue'
 export default {
   components: {
     Tabs,
     basicInfo,
     Creative,
     timePublish,
+    actionList,
+    gift,
   },
   data() {
     return {

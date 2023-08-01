@@ -1,5 +1,6 @@
-import {createApp} from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
+import VueScrollTo from 'vue-scrollto';
 
 // main styles css
 import '@css/styles.css';
@@ -21,9 +22,12 @@ library.add(fas, fab, far);
 const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon);
 
+app.use(VueScrollTo);
+
 app.use(router);
 // Mount vue app
 app.mount('#app');
+
 
 // Create login status
 // app.config.globalProperties.isAuthenticated = true;

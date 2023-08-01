@@ -12594,7 +12594,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem 1.5rem;
+  gap: 1rem 4rem;
 }
 .fieldset-group:not(.--checkbox, .--radio) > * {
   flex: 1;
@@ -12734,6 +12734,9 @@ li {
 .form .--select .form-group--field {
   flex: 0 1 auto;
   min-width: 40%;
+}
+.form .--select select + span {
+  font-weight: 700;
 }
 .form .--upload .fieldset-group {
   position: relative;
@@ -13317,6 +13320,11 @@ p .link {
   top: -15px;
   border-color: transparent transparent #262626;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.btn-add {
+  background-color: #d2e4f5;
+  color: #444;
 }
 
 /*# sourceMappingURL=styles.css.map */

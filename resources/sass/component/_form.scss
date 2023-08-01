@@ -73,7 +73,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem 1.5rem;
+    gap: 1rem 4rem;
     &:not(.--checkbox, .--radio) > * {
       flex: 1;
     }
@@ -234,6 +234,9 @@
     .form-group--field {
       flex: 0 1 auto;
       min-width: 40%;
+    }
+    select + span {
+      font-weight: 700;
     }
   }
   .--upload {

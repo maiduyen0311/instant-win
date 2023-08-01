@@ -26,6 +26,9 @@ $transition: all 0.2s ease 0.1s;
 $p-margin-top: 1rem;
 $content-margin-top: 5rem;
 
+$mgb: 4rem;
+$mgt: 4rem;
+
 $th-td-py: 1.5rem;
 $th-td-px: 2rem;
 $th-bkg: #e1ecf7;
@@ -49,6 +52,9 @@ $btn-second-color: #444;
 $btn-third-bkg: #7c030f;
 $btn-third-color: #fff;
 
+$btn-add-bkg: #d2e4f5;
+$btn-add-color: #444;
+
 $form-control-border: #cecfd4;
 
 $fieldset-bkg: #f7f8fc;
@@ -62,3 +68,8 @@ $progress-color: #666;
 $tooltip-message-bkg: #262626;
 
 $border-radius: 4px;
+
+$icon-ques_bkg: rgb(0, 174, 255);
+$icon-quiz_bkg: #fbd000;
+$icon-game_bkg: #e90582;
+$icon-number_bkg: #232833;

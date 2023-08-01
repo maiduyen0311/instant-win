@@ -4,29 +4,29 @@ import noImage from '@img/upload-texture.svg'
 <template>
   <div class="form-parts form">
     <h3 class="heading">{{ heading_1 }}<sub class="sub">必須</sub></h3>
-    <h4 class="heading-sub">{{ heading_2 }}</h4>
+    <fieldset class="fieldset">
+      <div class="add-gift"><font-awesome-icon :icon="['fas', 'plus']" /> ギフトを追加</div>
+    </fieldset>
+    <h3 class="heading">{{ heading_2 }}</h3>
+    <fieldset class="fieldset">
+      <div class="fieldset-group">
+        <div class="--input">
+          <label class="label">1回の抽選に必要なエントリー数<sub class="sub">必須</sub></label>
+          <input
+            type="number"
+            v-model="numberDraw"
+            class="form-control"
+            :placeholder="numPlaceholder"
+            autocomplete="off"
+            required
+          />
+        </div>
+      </div>
+    </fieldset>
     <fieldset class="fieldset">
       <div class="--upload">
+        <label class="label">はずれ画像（任意）</label>
         <div class="fieldset-group">
-          <div class="noted">
-            <span class="icon"><font-awesome-icon :icon="['fas', 'star']" /></span>
-            <div class="tooltip-inner">
-              <span
-                class="tooltip-trigger"
-                @mouseover="showTooltip"
-                @mouseout="hideTooltip"
-              >
-                <font-awesome-icon :icon="['far', 'question-circle']" />
-              </span>
-              <div
-                v-if="isTooltipVisible"
-                class="tooltip-message"
-                role="tooltip-message"
-              >
-                {{ tooltipMessage }}
-              </div>
-            </div>
-          </div>
           <div class="image">
             <img
               :src="noImageSrc"
@@ -35,7 +35,7 @@ import noImage from '@img/upload-texture.svg'
           </div>
           <div class="btn-action">
             <div class="recommend">
-              <small>推奨サイズ: 縦630px 横1200px<br />推奨比率 : 縦21 横40</small>
+              <small>推奨サイズ: 縦450px 横450px<br />推奨比率 : 縦1 横1</small>
             </div>
             <button class="btn btn-second">{{ btn_upload }}</button>
           </div>
@@ -57,13 +57,14 @@ export default {
   data() {
     return {
       noImageSrc: noImage,
-      heading_1: 'クリエイティブ',
-      heading_2: 'キャンペーンクリエイティブ',
+      heading_1: 'ギフト',
+      heading_2: 'インスタントウィン設定',
       btn_next: '次ページ',
       btn_prev: '前ページ',
-      btn_upload: 'アップロード',
+      btn_upload: 'ファイルを選択',
       isTooltipVisible: false,
       tooltipMessage: 'メイン画像はSNSなどのOGPにも設定されます。',
+      numPlaceholder: '',
     }
   },
   methods: {

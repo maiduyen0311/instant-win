@@ -132,7 +132,6 @@ export default {
   },
   data() {
     return {
-      activeTab: 'all',
       activeModal: '',
       visible_entry: false,
       visible_lottery: false,

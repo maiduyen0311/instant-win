@@ -1,27 +1,30 @@
 <template>
   <div class="form-parts form">
+    <h3 class="heading">{{ heading_1 }}<sub class="sub">必須</sub></h3>
     <fieldset class="fieldset">
-      <div class="--textarea">
-        <label class="label">{{ label_1 }}<sub class="sub">必須</sub></label>
-        <textarea
-          v-model="message"
-          class="field-control"
-          required
-          rows="3"
-        ></textarea>
-        <div class="char-counter">0/100</div>
+      <div class="fieldset-group">
+        <div class="--textarea">
+          <textarea
+            v-model="message"
+            class="field-control"
+            required
+            rows="3"
+          ></textarea>
+          <div class="char-counter">0/100</div>
+        </div>
       </div>
     </fieldset>
+    <h3 class="heading">{{ heading_2 }}<sub class="sub">必須</sub></h3>
     <fieldset class="fieldset">
-      <div class="--textarea mt-5">
-        <label class="label">{{ label_2 }}</label>
-        <textarea
-          v-model="message"
-          class="field-control"
-          required
-          rows="3"
-        ></textarea>
-        <div class="char-counter">0/100</div>
+      <div class="fieldset-group">
+        <div class="--textarea">
+          <textarea
+            v-model="message"
+            class="field-control"
+            required
+            rows="3"
+          ></textarea>
+        </div>
       </div>
     </fieldset>
     <div class="form-btn">
@@ -34,8 +37,8 @@ export default {
   data() {
     return {
       message: '100文字まで入力できます。',
-      label_1: 'タイトル',
-      label_2: '詳細',
+      heading_1: 'タイトル',
+      heading_2: '詳細',
       btn_next: '次ページ',
     }
   },
