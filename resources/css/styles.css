@@ -11865,20 +11865,83 @@ textarea.form-control-lg {
   box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe,
+html,
+body,
+div,
+span,
+object,
+iframe,
 h1,
-.h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
 small,
-.small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, .mark, audio, video {
+.small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+.mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -11887,8 +11950,17 @@ time, mark, .mark, audio, video {
   background: transparent;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -11908,7 +11980,8 @@ p strong {
   font-weight: 700;
 }
 
-abbr[title], dfn[title] {
+abbr[title],
+dfn[title] {
   text-decoration: underline dotted;
   cursor: help;
   text-decoration-skip-ink: none;
@@ -11946,12 +12019,15 @@ dd {
   margin-left: 0;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -12266,24 +12342,25 @@ progress {
 :root {
   --html-font-size: 10px;
   --body-size: 1.4rem;
-  --body-line-height:calc(var(--body-size) * 1.56);
+  --body-line-height: calc(var(--body-size) * 1.56);
   --body-letter-spacing: 0.04rem;
-  --body-family: "Source Han Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", Meiryo, sans-serif;
+  --body-family: "Source Han Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium",
+    "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", Meiryo, sans-serif;
   --body-weight: 400;
-  --body-color:#3B4043;
-  --body-bg:#fff;
-  --menu-family:var(--body-family);
-  --button-family:var(--body-family);
+  --body-color: #3b4043;
+  --body-bg: #fff;
+  --menu-family: var(--body-family);
+  --button-family: var(--body-family);
   --heading-color: #333;
-  --heading-family:var(--body-family);
+  --heading-family: var(--body-family);
   --h1-size: 3.2rem;
-  --h1-line-height:calc(var(--h1-size) * 1.375);
-  --h2-size:2.8rem;
-  --h2-line-height:calc(var(--h2-size) * 1.57);
-  --h3-size:2.4rem;
-  --h3-line-height:calc(var(--h3-size) * 1.5);
-  --h4-size:2rem;
-  --h4-line-height:calc(var(--h4-size) * 1.4);
+  --h1-line-height: calc(var(--h1-size) * 1.375);
+  --h2-size: 2.8rem;
+  --h2-line-height: calc(var(--h2-size) * 1.57);
+  --h3-size: 2.4rem;
+  --h3-line-height: calc(var(--h3-size) * 1.5);
+  --h4-size: 2rem;
+  --h4-line-height: calc(var(--h4-size) * 1.4);
 }
 
 html {
@@ -12365,19 +12442,25 @@ li {
 .modal .page-title {
   text-align: center;
 }
+.modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-right: -2rem;
+}
 .modal-footer {
   margin-left: -4rem;
   margin-right: -4rem;
   padding: 2rem 4rem;
   padding-bottom: 0;
   margin-top: 4rem;
-  gap: 2rem;
+  display: block;
 }
 .modal-footer > * {
   margin: 0;
 }
-.modal-footer .btn {
-  min-width: 20rem;
+.modal-footer .btn-action {
+  justify-content: flex-end;
+  gap: 1rem 2rem;
 }
 
 .card-wrapper {
@@ -12522,17 +12605,10 @@ li {
 }
 
 .fieldset {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 4rem;
   margin-bottom: 2rem;
-  align-items: center;
 }
 .fieldset:last-child {
   margin-bottom: 0;
-}
-.fieldset > * {
-  flex: 1;
 }
 .fieldset-col:first-child {
   max-width: 27%;
@@ -12553,7 +12629,16 @@ li {
   margin-top: 0.7rem;
 }
 .fieldset-row {
-  flex: 1 0 100%;
+  margin: 4rem 0 1rem;
+}
+.fieldset-row:first-child {
+  margin-top: 0;
+}
+.fieldset-row > * {
+  margin-top: 2rem;
+}
+.fieldset-row > *:first-child {
+  margin-top: 0;
 }
 .fieldset label {
   font-weight: 600;
@@ -12605,6 +12690,12 @@ li {
 }
 .fieldset .char-counter {
   text-align: right;
+  opacity: 0.6;
+}
+.fieldset .note {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .form-agree {
@@ -12700,6 +12791,7 @@ li {
   cursor: pointer;
   text-align: center;
   transition: all 0.2s ease 0.1s;
+  border-radius: 2px;
 }
 .form .--radio label {
   margin-right: 6rem;
@@ -12725,8 +12817,9 @@ li {
   margin-right: 0;
 }
 .form .--checkbox label input[type=checkbox]:checked + span::before {
-  border-color: #02488f;
-  background-size: contain;
+  background-color: #333;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #000;
 }
 .form .--textarea textarea {
   min-height: 14rem;
@@ -12738,6 +12831,9 @@ li {
 .form .--select select + span {
   font-weight: 700;
 }
+.form .--upload {
+  position: relative;
+}
 .form .--upload .fieldset-group {
   position: relative;
 }
@@ -12748,6 +12844,9 @@ li {
   top: 0;
   bottom: 0;
   opacity: 0;
+}
+.form .modal-footer .btn-action {
+  justify-content: flex-end;
 }
 
 .custom-select-container {
@@ -12828,12 +12927,6 @@ li {
 }
 
 @media (max-width: 767.98px) {
-  .fieldset {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem 0;
-    padding: 2rem 0;
-  }
   .fieldset > * {
     max-width: 100% !important;
     width: 100%;
@@ -13189,36 +13282,6 @@ body.admin-page.activeshrink .dashboard-nav + .main__content {
 .form-label .txt-success {
   color: #35a02e;
 }
-.form-control {
-  padding: 1rem 1.5rem;
-  font-size: var(--body-size);
-  line-height: 1.4;
-  color: var(--body-color);
-  min-height: 4.4rem;
-  border: 1px solid #cecfd4;
-  border-radius: 3px;
-}
-.form-control::placeholder {
-  color: var(--body-color);
-}
-.form-control__group {
-  display: flex;
-}
-.form-control__group > .label {
-  background-color: #e9ecef;
-  display: flex;
-  align-items: center;
-  border: 1px solid #cecfd4;
-  padding: 1rem 1.5rem;
-  border-radius: 3px 0 0 3px;
-}
-.form-control__group > .label + .form-control {
-  border-left: none;
-  border-radius: 0 3px 3px 0;
-}
-.form-control[type=file] {
-  padding: 0;
-}
 .form select.form-control {
   appearance: auto;
 }
@@ -13325,6 +13388,11 @@ p .link {
 .btn-add {
   background-color: #d2e4f5;
   color: #444;
+}
+
+.btn-action {
+  display: flex;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,8 +1,8 @@
 <template>
   <div class="form-parts form">
-    <h3 class="heading">{{ heading_1 }}<sub class="sub">必須</sub></h3>
     <fieldset class="fieldset">
-      <div class="fieldset-group">
+      <div class="fieldset-row">
+        <h3 class="heading">{{ heading_1 }}<sub class="sub">必須</sub></h3>
         <div class="--textarea">
           <textarea
             v-model="message"
@@ -10,13 +10,11 @@
             required
             rows="3"
           ></textarea>
-          <div class="char-counter">0/100</div>
+          <p class="char-counter">0/100</p>
         </div>
       </div>
-    </fieldset>
-    <h3 class="heading">{{ heading_2 }}<sub class="sub">必須</sub></h3>
-    <fieldset class="fieldset">
-      <div class="fieldset-group">
+      <div class="fieldset-row">
+        <h3 class="heading">{{ heading_2 }}<sub class="sub">必須</sub></h3>
         <div class="--textarea">
           <textarea
             v-model="message"

@@ -5,19 +5,19 @@ $skye-blue: #294a98;
 $blue: #0086ac;
 $green: #35a02e;
 
-$small-color: #666;
+$small_color: #666;
 
 $font-weight-bold: 700;
 $font-weight-medium: 500;
 $font-weight-normal: 400;
 
 $hr-margin-y: 1rem !default;
-$hr-color: inherit !default;
-$hr-border-color: null !default;
-$hr-border-width: 1px !default;
+$hr_color: inherit !default;
+$hr-border_color: null !default;
+$hr-border_width: 1px !default;
 $hr-opacity: 0.25 !default;
 
-$border-color: #e7e6e8;
+$border_color: #e7e6e8;
 $link: #02488f;
 $link-hover: #dc3545;
 
@@ -31,12 +31,12 @@ $mgt: 4rem;
 
 $th-td-py: 1.5rem;
 $th-td-px: 2rem;
-$th-bkg: #e1ecf7;
+$th_bkg: #e1ecf7;
 
 $dashboard-width: 25rem;
-$dashboard-main-padding: 4rem;
-$dashboard-btn-bkg: #b40214;
-$dashboard-btn-color: #fff;
+$dashboard-main_pd: 4rem;
+$dashboard-btn_bkg: #b40214;
+$dashboard-btn_color: #fff;
 
 $page-ttl-size: 2.4rem;
 
@@ -45,27 +45,27 @@ $box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.
 
 $btn-py: 1.2rem;
 $btn-px: 2.5rem;
-$btn-primary-bkg: #022b54;
-$btn-primary-color: #fff;
-$btn-second-bkg: #ebeef0;
-$btn-second-color: #444;
-$btn-third-bkg: #7c030f;
-$btn-third-color: #fff;
+$btn-primary_bkg: #022b54;
+$btn-primary_color: #fff;
+$btn-second_bkg: #ebeef0;
+$btn-second_color: #444;
+$btn-third_bkg: #7c030f;
+$btn-third_color: #fff;
 
-$btn-add-bkg: #d2e4f5;
-$btn-add-color: #444;
+$btn-add_bkg: #d2e4f5;
+$btn-add_color: #444;
 
-$form-control-border: #cecfd4;
+$form-control_border: #cecfd4;
 
-$fieldset-bkg: #f7f8fc;
+$fieldset_bkg: #f7f8fc;
 
 $admin-content-padding: 4rem;
 
 $error: #dc3545;
 
-$progress-bar-color: #e9e9e9;
-$progress-color: #666;
-$tooltip-message-bkg: #262626;
+$progress-bar_color: #e9e9e9;
+$progress_color: #666;
+$tooltip-message_bkg: #262626;
 
 $border-radius: 4px;
 
@@ -73,3 +73,4 @@ $icon-ques_bkg: rgb(0, 174, 255);
 $icon-quiz_bkg: #fbd000;
 $icon-game_bkg: #e90582;
 $icon-number_bkg: #232833;
+$icon-user_bkg: #075fe2;

@@ -50,8 +50,8 @@
       height: 30px;
       content: '';
       line-height: 30px;
-      border: 2px solid $progress-bar-color;
-      background-color: $progress-bar-color;
+      border: 2px solid $progress-bar_color;
+      background-color: $progress-bar_color;
       display: block;
       text-align: center;
       margin: 0 auto 10px auto;
@@ -65,7 +65,7 @@
       height: 4px;
       content: '';
       position: absolute;
-      background-color: $progress-bar-color;
+      background-color: $progress-bar_color;
       top: 14px;
       left: 0;
       z-index: 1;
@@ -95,12 +95,12 @@
       }
     }
     a {
-      color: $progress-color;
+      color: $progress_color;
       font-weight: 600;
       margin: 0 !important;
       border: none !important;
       &:hover {
-        color: $progress-color;
+        color: $progress_color;
         opacity: 1;
       }
     }

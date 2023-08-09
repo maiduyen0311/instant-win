@@ -4,45 +4,43 @@ import noImage from '@img/upload-texture.svg'
 <template>
   <div class="form-parts form">
     <h3 class="heading">{{ heading_1 }}<sub class="sub">必須</sub></h3>
+    <div class="add-gift"><font-awesome-icon :icon="['fas', 'plus']" /> ギフトを追加</div>
     <fieldset class="fieldset">
-      <div class="add-gift"><font-awesome-icon :icon="['fas', 'plus']" /> ギフトを追加</div>
-    </fieldset>
-    <h3 class="heading">{{ heading_2 }}</h3>
-    <fieldset class="fieldset">
-      <div class="fieldset-group">
+      <div class="fieldset-row">
+        <h3 class="heading">{{ heading_2 }}</h3>
         <div class="--input">
           <label class="label">1回の抽選に必要なエントリー数<sub class="sub">必須</sub></label>
           <input
             type="number"
             v-model="numberDraw"
-            class="form-control"
+            class="field-control"
             :placeholder="numPlaceholder"
             autocomplete="off"
             required
           />
         </div>
       </div>
-    </fieldset>
-    <fieldset class="fieldset">
-      <div class="--upload">
-        <label class="label">はずれ画像（任意）</label>
-        <div class="fieldset-group">
-          <div class="image">
-            <img
-              :src="noImageSrc"
-              alt=""
+      <div class="fieldset-row">
+        <div class="--upload">
+          <label class="label">はずれ画像（任意）</label>
+          <div class="fieldset-group">
+            <div class="image">
+              <img
+                :src="noImageSrc"
+                alt=""
+              />
+            </div>
+            <div class="btn-action">
+              <div class="recommend">
+                <small>推奨サイズ: 縦450px 横450px<br />推奨比率 : 縦1 横1</small>
+              </div>
+              <button class="btn btn-second">{{ btn_upload }}</button>
+            </div>
+            <input
+              type="file"
+              accept=".jpeg,.png,.jpg,.gif"
             />
           </div>
-          <div class="btn-action">
-            <div class="recommend">
-              <small>推奨サイズ: 縦450px 横450px<br />推奨比率 : 縦1 横1</small>
-            </div>
-            <button class="btn btn-second">{{ btn_upload }}</button>
-          </div>
-          <input
-            type="file"
-            accept=".jpeg,.png,.jpg,.gif"
-          />
         </div>
       </div>
     </fieldset>

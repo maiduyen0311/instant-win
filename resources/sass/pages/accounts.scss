@@ -1,25 +1,25 @@
-@import "../variable";
-.accounts-content{
+@import '../variable';
+.accounts-content {
   padding: $admin-content-padding;
-  .tab-pane{
-    margin-top:4rem;
+  .tab-pane {
+    margin-top: 4rem;
   }
-  .nav{
-    &-tabs{
+  .nav {
+    &-tabs {
       padding: 0;
     }
   }
 }
-.account-header{
+.account-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  &__avatar{
+  &__avatar {
     position: relative;
-    img{
+    img {
       max-width: 10rem;
     }
-    .edit{
+    .edit {
       position: absolute;
       right: 5px;
       bottom: -5px;
@@ -27,58 +27,58 @@
       height: 2.5rem;
       border-radius: 50%;
       background-color: #fff;
-      box-shadow: 0 3px 10px rgba(0,0,0,.15);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
     }
   }
 }
-.account-form{
+.account-form {
   &__email,
-  &__password{
+  &__password {
     margin-top: 4rem;
   }
 }
-.email-current{
+.email-current {
   display: flex;
   align-items: center;
-  svg{
+  svg {
     width: 2rem;
     height: 2rem;
     margin-right: 1rem;
   }
 }
-.form{
-  &-group{
-    .btn{
+.form {
+  &-group {
+    .btn {
       margin-top: 2rem;
       min-width: 50%;
       position: relative;
     }
   }
-  &-btn{
+  &-btn {
     margin-top: 4rem;
     gap: 1rem 1.5rem;
   }
-  .img-upload{
+  .img-upload {
     position: relative;
     margin-bottom: 1rem;
-    input[type='file']{
+    input[type='file'] {
       position: absolute;
       left: 0;
       right: 0;
-      top:0;
+      top: 0;
       bottom: 0;
       opacity: 0;
     }
   }
 }
-.brand-logo{
+.brand-logo {
   max-width: 20rem;
 }
-.no-data{
-  & > .btn{
+.no-data {
+  & > .btn {
     margin-top: 4rem;
   }
 }

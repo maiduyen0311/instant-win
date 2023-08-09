@@ -1,5 +1,6 @@
 <script setup>
 import Tabs from '@components/Tabs.vue'
+import CommonPopup from '@components/Popup.vue'
 import entryMethod from '@components/campaign/Entry-method.vue'
 import lotteryMethod from '@components/campaign/Lottery-method.vue'
 import listCampaign from '@components/campaign/ListCampaigns.vue'
@@ -18,64 +19,22 @@ import listCampaign from '@components/campaign/ListCampaigns.vue'
       <div class="col-4 page-title__right">
         <span
           class="btn btn-primary btn-dashboard"
-          @click="openPopup_Entry"
+          @click="showPopup('entryMethod')"
           >{{ btn_create }}</span
         >
-        <div
-          class="modal fade"
-          v-if="visible_entry || visible_lottery"
-          :class="{ show: activeModal !== '' }"
+        <CommonPopup
+          v-if="popupVisible"
+          :class="{ show: popupVisible }"
+          @close="closePopup"
+          :showNextButton="!isLastPopup"
+          :showPrevButton="currentPopupIndex > 0"
+          @next="showNextPopup"
+          @prev="showPrevPopup"
+          @popupClosed="resetPopupIndex"
+          :showhideButton="shouldShowHideButton"
         >
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <span
-                  class="return"
-                  v-if="activeModal !== 'entry'"
-                  @click="openPopup_Entry"
-                  ><font-awesome-icon :icon="['fas', 'arrow-left']" /></span
-                ><span
-                  @click="hidePopup"
-                  class="close"
-                  ><font-awesome-icon :icon="['fas', 'xmark']"
-                /></span>
-              </div>
-              <div
-                class="modal-body"
-                v-if="activeModal === 'entry'"
-              >
-                <entryMethod></entryMethod>
-              </div>
-              <div
-                class="modal-body"
-                v-if="activeModal === 'lottery'"
-              >
-                <lotteryMethod></lotteryMethod>
-              </div>
-              <div class="modal-footer">
-                <button
-                  class="btn btn-second close"
-                  @click="hidePopup"
-                >
-                  キャンセル
-                </button>
-                <button
-                  class="btn btn-primary"
-                  v-if="activeModal !== 'lottery'"
-                  @click="openPopup_Lottery"
-                >
-                  次へ
-                </button>
-                <router-link
-                  v-else
-                  to="/campaigns/create"
-                  class="btn btn-primary"
-                  >次へ
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
+          <component :is="selectedComponent" />
+        </CommonPopup>
       </div>
     </div>
   </div>
@@ -94,7 +53,7 @@ import listCampaign from '@components/campaign/ListCampaigns.vue'
           v-if="activeTab === 1"
           :class="{ active: activeTab === 1 }"
         >
-          下書き
+          <listCampaign></listCampaign>
         </div>
         <div
           class="tab-pane"
@@ -108,14 +67,14 @@ import listCampaign from '@components/campaign/ListCampaigns.vue'
           v-if="activeTab === 3"
           :class="{ active: activeTab === 3 }"
         >
-          公開中
+          <listCampaign></listCampaign>
         </div>
         <div
           class="tab-pane"
           v-if="activeTab === 4"
           :class="{ active: activeTab === 4 }"
         >
-          終了
+          <listCampaign></listCampaign>
         </div>
       </template>
     </tabs>
@@ -125,6 +84,7 @@ import listCampaign from '@components/campaign/ListCampaigns.vue'
 export default {
   name: 'Dashboard',
   components: {
+    CommonPopup,
     entryMethod,
     lotteryMethod,
     listCampaign,
@@ -132,29 +92,49 @@ export default {
   },
   data() {
     return {
-      activeModal: '',
-      visible_entry: false,
-      visible_lottery: false,
       btn_create: '新しいキャンペーンを作成',
       tabs: [{ title: 'すべて' }, { title: '下書き' }, { title: '公開待ち' }, { title: '公開中' }, { title: '終了' }],
       activeTab: 0,
+      popupVisible: false,
+      selectedComponent: null,
+      popupComponents: ['entryMethod', 'lotteryMethod'],
+      currentPopupIndex: 0,
     }
   },
+  computed: {
+    isLastPopup() {
+      return this.currentPopupIndex === this.popupComponents.length - 1
+    },
+    shouldShowHideButton() {
+      return this.selectedComponent === 'ComponentA'
+    },
+  },
   methods: {
-    openPopup_Entry() {
-      this.activeModal = 'entry'
-      this.visible_entry = true
-      this.visible_lottery = false
+    showPopup(componentName) {
+      this.selectedComponent = componentName
+      this.popupVisible = true
     },
-    openPopup_Lottery() {
-      this.activeModal = 'lottery'
-      this.visible_entry = false
-      this.visible_lottery = true
+    closePopup() {
+      this.popupVisible = false
     },
-    hidePopup() {
-      this.activeModal = ''
-      this.visible_entry = false
-      this.visible_lottery = false
+    showNextPopup() {
+      this.currentPopupIndex++
+      if (this.currentPopupIndex >= this.popupComponents.length) {
+        // If we reach the end of the list, reset the index
+        this.currentPopupIndex = 0
+      }
+      this.selectedComponent = this.popupComponents[this.currentPopupIndex]
+    },
+    showPrevPopup() {
+      if (this.currentPopupIndex <= 0) {
+        this.currentPopupIndex = this.popupComponents.length - 1
+      } else {
+        this.currentPopupIndex--
+      }
+      this.selectedComponent = this.popupComponents[this.currentPopupIndex]
+    },
+    resetPopupIndex() {
+      this.currentPopupIndex = 0
     },
   },
 }

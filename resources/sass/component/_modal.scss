@@ -1,9 +1,9 @@
-$modal-pd:        4rem;
+$modal-pd: 4rem;
 
-.modal{
+.modal {
   background: rgba(#000, 0.5);
   align-items: center;
-  &-content{
+  &-content {
     min-height: 40rem;
     padding: $modal-pd;
     border: none;
@@ -11,51 +11,57 @@ $modal-pd:        4rem;
     border-radius: 10px;
     text-align: left;
   }
-  &-header{
+  &-header {
     border: none;
     .return,
-    .close{
+    .close {
       position: absolute;
-      top:0;
+      top: 0;
       width: 6rem;
       height: 6rem;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      svg{
+      svg {
         width: 24px;
         height: 24px;
       }
     }
-    .close{
+    .close {
       right: 0;
     }
-    .return{
+    .return {
       left: 0;
     }
   }
-  &.show{
+  &.show {
     display: flex;
-    & > div{
+    & > div {
       flex: 1;
     }
   }
-  .page-title{
+  .page-title {
     text-align: center;
   }
-  &-footer{
-    margin-left: - $modal-pd;
-    margin-right: - $modal-pd;
+  &-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-right: calc($modal-pd / 2 * -1);
+  }
+  &-footer {
+    margin-left: -$modal-pd;
+    margin-right: -$modal-pd;
     padding: 2rem $modal-pd;
     padding-bottom: 0;
     margin-top: $modal-pd;
-    gap:2rem;
-    & > *{
+    display: block;
+    & > * {
       margin: 0;
     }
-    .btn{
-      min-width: 20rem;
+    .btn-action {
+      justify-content: flex-end;
+      gap: 1rem 2rem;
     }
   }
 }

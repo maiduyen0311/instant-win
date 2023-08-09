@@ -1,14 +1,7 @@
 .fieldset {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 4rem;
   margin-bottom: 2rem;
-  align-items: center;
   &:last-child {
     margin-bottom: 0;
-  }
-  & > * {
-    flex: 1;
   }
   &-col {
     &:first-child {
@@ -31,7 +24,16 @@
     }
   }
   &-row {
-    flex: 1 0 100%;
+    margin: 4rem 0 1rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    & > * {
+      margin-top: 2rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
   label {
     font-weight: 600;
@@ -51,7 +53,7 @@
     }
   }
   .field-control:not([type='radio'], [type='checkbox']) {
-    border: 1px solid $border-color;
+    border: 1px solid $border_color;
     background-color: #fff;
     padding: 1rem;
     border-radius: 4px;
@@ -86,6 +88,12 @@
   }
   .char-counter {
     text-align: right;
+    opacity: 0.6;
+  }
+  .note {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
   }
 }
 .form {
@@ -167,7 +175,7 @@
           &::before {
             content: '';
             background: #fff;
-            border: 1px solid $border-color;
+            border: 1px solid $border_color;
             display: inline-block;
             width: 16px;
             height: 16px;
@@ -177,6 +185,7 @@
             cursor: pointer;
             text-align: center;
             transition: $transition;
+            border-radius: 2px;
           }
         }
       }
@@ -217,8 +226,9 @@
         &:checked {
           & + span {
             &::before {
-              border-color: $link;
-              background-size: contain;
+              background-color: #333;
+              border: 2px solid #fff;
+              box-shadow: 0 0 0 1px #000;
             }
           }
         }
@@ -240,6 +250,7 @@
     }
   }
   .--upload {
+    position: relative;
     .fieldset-group {
       position: relative;
     }
@@ -252,12 +263,17 @@
       opacity: 0;
     }
   }
+  .modal-footer {
+    .btn-action {
+      justify-content: flex-end;
+    }
+  }
 }
 .custom-select-container {
   position: relative;
   .custom-select-opener {
     background-color: #fff;
-    border: 1px solid $border-color;
+    border: 1px solid $border_color;
     padding: 0.5rem 1.5rem;
     padding-right: 3.5rem;
     display: flex;
@@ -306,7 +322,7 @@
       max-height: 20rem;
       overflow-y: auto;
       z-index: 10;
-      border-color: $border-color;
+      border-color: $border_color;
     }
     .custom-select-opener {
       &::before {
@@ -325,7 +341,7 @@
   .custom-select-option {
     padding: 0.5rem 1rem;
     &.has-focus {
-      background-color: $border-color;
+      background-color: $border_color;
     }
     &.is-selected {
       background-color: $link-hover;
@@ -335,10 +351,6 @@
 }
 @include media-breakpoint-down(md) {
   .fieldset {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem 0;
-    padding: 2rem 0;
     & > * {
       max-width: 100% !important;
       width: 100%;

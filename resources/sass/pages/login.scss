@@ -1,6 +1,6 @@
 $txt-color: #fff;
-$login-bkg: #191714;
-$login-bkg-gradient: #022b54;
+$login_bkg: #191714;
+$login_bkg-gradient: #022b54;
 
 body.page-login #app {
   background: url(@img/bkg-body.jpg) no-repeat center;
@@ -23,11 +23,11 @@ body.page-login #app {
   &__inner {
     max-width: 40%;
     margin: 0 auto;
-    background: $login-bkg;
-    background: -webkit-linear-gradient(top, $login-bkg-gradient, $login-bkg);
-    background: -o-linear-gradient(top, $login-bkg-gradient, $login-bkg);
-    background: -moz-linear-gradient(top, $login-bkg-gradient, $login-bkg);
-    background: linear-gradient(top, $login-bkg-gradient, $login-bkg);
+    background: $login_bkg;
+    background: -webkit-linear-gradient(top, $login_bkg-gradient, $login_bkg);
+    background: -o-linear-gradient(top, $login_bkg-gradient, $login_bkg);
+    background: -moz-linear-gradient(top, $login_bkg-gradient, $login_bkg);
+    background: linear-gradient(top, $login_bkg-gradient, $login_bkg);
     padding: 4rem;
     min-height: 65rem;
     border-radius: 1rem;
@@ -45,8 +45,11 @@ body.page-login #app {
   .form {
     &-login {
       width: 80%;
+      .btn-action {
+        flex-direction: column;
+      }
     }
-    &-control {
+    .field-control {
       padding: 1rem 0 1rem 3.5rem;
       font-weight: 500;
       border-radius: 0;
@@ -62,7 +65,7 @@ body.page-login #app {
       &::-webkit-input-placeholder {
         color: $txt-color;
       }
-      & + .focus__form-control {
+      & + .focus__field-control {
         position: absolute;
         display: block;
         width: 100%;
@@ -98,14 +101,14 @@ body.page-login #app {
         border-bottom-color: transparent !important;
         outline: none;
         box-shadow: none;
-        & + .focus__form-control {
+        & + .focus__field-control {
           &::before {
             width: 100%;
           }
         }
       }
     }
-    &-group {
+    .fieldset-group {
       position: relative;
       display: block;
       margin: 0;

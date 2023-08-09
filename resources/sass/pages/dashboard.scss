@@ -1,32 +1,32 @@
-@import "../variable";
+@import '../variable';
 
-.dashboard-content{
-  .tab-content{
-    .tab-pane{
-      .table{
+.dashboard-content {
+  .tab-content {
+    .tab-pane {
+      .table {
         th:nth-child(3),
         td:nth-child(3),
         th:nth-child(4),
         td:nth-child(4),
         th:nth-child(5),
-        td:nth-child(5){
+        td:nth-child(5) {
           text-align: center;
         }
-        td{
-          .status-badge{
+        td {
+          .status-badge {
             font-weight: 400;
             font-size: 11px;
           }
         }
-        tbody{
-          tr{
-            &:last-child{
-              td{
+        tbody {
+          tr {
+            &:last-child {
+              td {
                 border-bottom-color: transparent;
               }
             }
-            td{
-              &.info{
+            td {
+              &.info {
                 max-width: 600px;
               }
             }
@@ -35,17 +35,17 @@
       }
     }
   }
-  .checkbox{
+  .checkbox {
     position: relative;
-    input[type='checkbox']{
+    input[type='checkbox'] {
       opacity: 0;
       width: 18px;
       height: 20px;
-      & + span{
-        &::before{
-          content: "";
+      & + span {
+        &::before {
+          content: '';
           position: absolute;
-          top:2px;
+          top: 2px;
           left: 0;
           width: 18px;
           height: 18px;
@@ -55,9 +55,9 @@
           background-color: #fff;
         }
       }
-      &:checked{
-        & + span{
-          &::before{
+      &:checked {
+        & + span {
+          &::before {
             background-color: #333;
             border: 2px solid #fff;
             box-shadow: 0 0 0 1px #000;
@@ -66,24 +66,24 @@
       }
     }
   }
-  .info-campaign{
+  .info-campaign {
     display: flex;
     align-items: center;
-    &__img{
+    &__img {
       max-width: 150px;
       margin-right: $th-td-px;
-      img{
+      img {
         border-radius: 10px;
       }
     }
-    &__txt{
+    &__txt {
       flex: 1;
     }
-    &__type{
+    &__type {
       margin-top: 1rem;
       display: flex;
       gap: 0.5rem;
-      & > span{
+      & > span {
         background-color: #f1f1f1;
         border-radius: 2px;
         padding: 0.5rem 1rem;

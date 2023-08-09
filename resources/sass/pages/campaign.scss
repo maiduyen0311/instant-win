@@ -51,9 +51,9 @@
     }
     .--upload {
       .fieldset-group {
-        background-color: $fieldset-bkg;
+        background-color: $fieldset_bkg;
         padding: 1.5rem;
-        border: 1px solid $border-color;
+        border: 1px solid $border_color;
         border-radius: $border-radius;
       }
     }
@@ -101,7 +101,7 @@
   .list {
     &-item {
       padding: 1.5rem;
-      background-color: $fieldset-bkg;
+      background-color: $fieldset_bkg;
       border-radius: $border-radius;
       margin-top: 1rem;
       display: flex;
@@ -135,6 +135,9 @@
       .--serinumber {
         background-color: $icon-number_bkg;
       }
+      .--user {
+        background-color: $icon-user_bkg;
+      }
       .title {
         flex: 1;
         .ttl {
@@ -151,7 +154,7 @@
       &.--empty {
         padding: 2rem;
         text-align: center;
-        border: 2px dashed $border-color;
+        border: 2px dashed $border_color;
         display: flex;
         justify-content: center;
       }
@@ -169,8 +172,72 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  border: 1px dotted $border-color;
+  border: 1px dotted $border_color;
   border-radius: $border-radius;
-  background-color: $fieldset-bkg;
+  background-color: $fieldset_bkg;
   min-height: 8rem;
+  margin-bottom: 4rem;
+}
+.subscription-promotion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-bottom: 2rem;
+  background-color: #eae6fd;
+  color: #53489c;
+  padding: 1rem 1.5rem;
+  border-radius: $border-radius;
+  .btn-sub-pro {
+    padding: 0.5rem 1rem;
+    font-size: calc(var(--body-size) - 0.2rem);
+  }
+}
+.actions-form {
+  display: flex;
+  gap: 4rem;
+  & > * {
+    flex: 1;
+  }
+  &__right {
+    max-width: 20rem;
+  }
+  .plus {
+    display: flex;
+    justify-content: flex-end;
+    .icon {
+      cursor: pointer;
+      svg {
+        width: 4.5rem;
+        height: 4.5rem;
+        path {
+          fill: $link-hover;
+        }
+        &:hover {
+          path {
+            fill: $link;
+          }
+        }
+      }
+    }
+  }
+}
+.fieldset {
+  &.shadow {
+    padding: $admin-content-padding;
+    border-radius: $border-radius;
+    border: 1px solid $border-radius;
+    margin-top: 2rem;
+  }
+  .--radio {
+    & > label {
+      position: relative;
+      input.field-control {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }
