@@ -1,7 +1,9 @@
 <template>
   <form class="form actions-form">
     <div class="actions-form__left">
-      <h4 class="ttl">属性アンケート</h4>
+      <div class="action-title">
+        <h4 class="ttl">属性アンケート</h4>
+      </div>
       <fieldset class="fieldset shadow">
         <div class="fieldset-row">
           <label class="label">質問１</label>

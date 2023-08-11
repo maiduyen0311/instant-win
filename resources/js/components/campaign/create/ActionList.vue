@@ -11,6 +11,7 @@ import openPopup_UserQuestion from '@components/campaign/actions/AttributeQuesti
 import openPopup_Games from '@components/campaign/actions/Games.vue'
 import openPopup_Lines from '@components/campaign/actions/Lines.vue'
 import openPopup_serialNumber from '@components/campaign/actions/SerialNumber.vue'
+import openPopup_Quiz from '@components/campaign/actions/Quizzes.vue'
 </script>
 <template>
   <div class="form-parts form">
@@ -82,7 +83,12 @@ import openPopup_serialNumber from '@components/campaign/actions/SerialNumber.vu
             <h5 class="ttl">クイズ</h5>
             <p class="txt">設定したクイズに挑戦してもらう</p>
           </div>
-          <button class="btn btn-add">追加</button>
+          <button
+            class="btn btn-add"
+            @click="showPopup('openPopup_Quiz')"
+          >
+            追加
+          </button>
         </li>
         <li class="list-item">
           <span class="icon --game"
@@ -161,6 +167,7 @@ export default {
     openPopup_Games,
     openPopup_Lines,
     openPopup_serialNumber,
+    openPopup_Quiz,
   },
   data() {
     return {

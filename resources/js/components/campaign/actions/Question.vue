@@ -3,38 +3,38 @@
     <div class="actions-form__left">
       <div class="action-title">
         <h4 class="ttl">オプション設定</h4>
-        <fieldset class="fieldset">
-          <div class="fieldset-row">
-            <div class="--checkbox">
-              <label class="checkbox">
-                <input
-                  type="checkbox"
-                  value=""
-                  name=""
-                  class="field-control"
-                />
-                <span class="label">このアンケートアクションに属性アンケートを含める</span>
-              </label>
-            </div>
-            <div class="--select">
-              <select
-                class="field-control"
-                required
-              >
-                <option
-                  value=""
-                  disabled
-                  selected=""
-                  hidden
-                >
-                  --
-                </option>
-                <option value="1">--</option>
-              </select>
-            </div>
-          </div>
-        </fieldset>
       </div>
+      <fieldset class="fieldset">
+        <div class="fieldset-row">
+          <div class="--checkbox">
+            <label class="checkbox">
+              <input
+                type="checkbox"
+                value=""
+                name=""
+                class="field-control"
+              />
+              <span class="label">このアンケートアクションに属性アンケートを含める</span>
+            </label>
+          </div>
+          <div class="--select">
+            <select
+              class="field-control"
+              required
+            >
+              <option
+                value=""
+                disabled
+                selected=""
+                hidden
+              >
+                --
+              </option>
+              <option value="1">--</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
       <fieldset class="fieldset shadow">
         <div class="fieldset-row">
           <label class="label">質問１</label>
